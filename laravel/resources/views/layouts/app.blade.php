@@ -10,13 +10,6 @@
     </head>
 
     <body>
-	   <div id="wrapper">
-		   @include('common.nav')
-		   <div id="page-wrapper">
-			   <div class="container-fluid">
-					@yield('content')
-			   </div>
-		   </div>
-	   </div>
+	   @yield('body')
     </body>
 </html>

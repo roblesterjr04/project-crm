@@ -17,6 +17,8 @@ Route::get('/home', function() {
 	return redirect('/');
 });
 
+Route::get('/profile', 'ProfileController@profile');
+
 // Authentication Routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
