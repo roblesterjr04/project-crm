@@ -9,7 +9,7 @@
 
     </head>
 
-    <body>
+    <body class="@yield('class')">
 	   @yield('body')
     </body>
 </html>

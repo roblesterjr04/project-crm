@@ -1,5 +1,7 @@
 @extends('layouts.dash')
 
+@section('class', 'dash')
+
 @section('content')
 
 <!-- Page Heading -->
