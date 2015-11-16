@@ -63,7 +63,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://www.gravatar.com/avatar/{{ $hash }}" style="width: 35px; border-radius: 20px; margin-top: -21px; border: 2px solid #8c8c8c; margin-bottom: -20px; margin-right: 5px;" /> {{ $loggedUser->name }} <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://www.gravatar.com/avatar/{{ isset($hash) ? $hash : '' }}" style="width: 35px; border-radius: 20px; margin-top: -21px; border: 2px solid #8c8c8c; margin-bottom: -20px; margin-right: 5px;" /> {{ $loggedUser->name }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="/profile"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -90,6 +90,7 @@
                     <li>
                         <a href="/reports"><i class="fa fa-fw fa-bar-chart-o"></i> Reports</a>
                     </li>
+                    <li class="divider"></li>
                     <li>
                         <a href="/leads"><i class="fa fa-fw fa-database"></i> Leads</a>
                     </li>
@@ -100,11 +101,16 @@
                     		<a href="/customers"><i class="fa fa-fw fa-cubes"></i> Customers</a>
                     </li>
                     <li>
-                    		<a href="/user"><i class="fa fa-fw fa-user"></i> Contacts</a>
+                    		<a href="/contacts"><i class="fa fa-fw fa-user"></i> Contacts</a>
                     </li>
+                    <li class="divider"></li>
                     <li>
                     		<a href="/teams"><i class="fa fa-fw fa-users"></i> Teams</a>
                     </li>
+                    <li>
+                    		<a href="/users"><i class="fa fa-fw fa-user"></i> Users</a>
+                    </li>
+                    <li class="divider"></li>
                     <li>
                         <a href="/forms"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>

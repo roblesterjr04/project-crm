@@ -12,8 +12,13 @@ class ProfileController extends Controller
 {
    public function profile() {
 	   $user = Auth::user();
+	   $title = "Profile - $user->name";
 	   
-		return view('profile', ['loggedUser' => $user]);
+		return view('profile', ['loggedUser' => $user, 'title'=>$title]);
+   }
+   
+   public function save() {
+	   
    }
    
    public function __construct()

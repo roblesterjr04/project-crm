@@ -1,0 +1,67 @@
+html,body { height: 100%; }
+
+body {
+	background-color: #fff;
+	
+	&.gradient {
+		.gradient();
+	}
+}
+
+.gradient() {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,207cca+0,1e5799+100 */
+background: #7db9e8; /* Old browsers */
+background: -moz-linear-gradient(top,  #7db9e8 0%, #207cca 0%, #1e5799 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #7db9e8 0%,#207cca 0%,#1e5799 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #7db9e8 0%,#207cca 0%,#1e5799 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+
+}
+
+.mobile(@rules) {
+	@media screen and (max-width: 767px) {
+		@rules();
+	}
+}
+
+.tablet(@rules) {
+	@media screen and (min-width: 768px) and (max-width: 991px) {
+		@rules();
+	}
+}
+
+.desktop(@rules) {
+	@media screen and (min-width: 992px) {
+		@rules();
+	}
+}
+
+.not-mobile(@rules) {
+	@media screen and (min-width: 768px) {
+		@rules();
+	}
+}
+
+.not-tablet(@rules) {
+	@media screen and (min-width: 992px) or (max-width: 767px) {
+		@rules();
+	}
+}
+
+.not-desktop(@rules) {
+	@media screen and (max-width: 991px) {
+		@rules();
+	}
+}
+
+.print(@rules) {
+	@media print {
+		@rules();
+	}
+}
+
+.ie(@rules, @ver: 9) {
+	body.ie-@{ver} &, body.ie & {
+		@rules();
+	}
+}

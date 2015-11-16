@@ -1,0 +1,19 @@
+ul.nav {
+	&.navbar-nav, &.navbar-right {
+		&.top-nav {
+			li {
+				.mobile({
+					float: right;
+				});
+			}
+		}
+		&.side-nav {
+			li {
+				float: none;
+			}
+			.divider {
+				border-top: 1px solid #8c8c8c;
+			}
+		}
+	}
+}

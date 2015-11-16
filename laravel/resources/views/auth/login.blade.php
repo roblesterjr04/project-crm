@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+@section('class', 'gradient')
+
 @section('body')
 
 <div class="row">
-	<div class="col-md-4 col-md-offset-4">
+	<div class="col-sm-4 col-sm-offset-4">
 		@include('common.errors')
 		<form class="form" action="/auth/login" method="POST">
 			{{ csrf_field() }}
@@ -15,7 +17,7 @@
 				<label for="password">Password</label>
 				<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			</div>
-			<button type="submit" class="btn btn-primary">Login</button>
+			<button type="submit" class="btn btn-success">Login</button>
 			<a href="/auth/register" class="btn btn-default">Register</a>
 		</form>
 	</div>

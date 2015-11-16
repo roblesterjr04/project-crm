@@ -16,7 +16,7 @@ class IndexController extends Controller
 	   $user = Auth::user();
 	   $hash = md5($user->email);
 	   
-		return view('index', ['loggedUser' => $user, 'hash'=>$hash]);
+		return view('index', ['loggedUser' => $user, 'hash'=>$hash, 'title'=>'Dashboard']);
    }
    
    public function __construct()

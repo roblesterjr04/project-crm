@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !^/laravel/public/
+
+# Rewrites all URLS [Replace "domain" with the actual domain, without the TLD (.com, .net, .biz, etc)]
+RewriteCond %{HTTP_HOST} localcrm:8888
+
+# Rewrite all those to insert /folder
+RewriteRule ^(.*)$ /laravel/public/$1 [L]

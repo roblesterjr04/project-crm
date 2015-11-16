@@ -1,0 +1,70 @@
+// #77d42a #5cb811
+
+.baseButton() {
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	display:inline-block;
+	cursor:pointer;
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+	&:active {
+		position:relative;
+		top:1px;
+	}
+}
+
+.myButton(@text, @color-start, @color-stop, @shadow, @box-shadow) {
+	-moz-box-shadow:inset 0px 1px 0px 0px @box-shadow;
+	-webkit-box-shadow:inset 0px 1px 0px 0px @box-shadow;
+	box-shadow:inset 0px 1px 0px 0px @box-shadow;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, @color-start), color-stop(1, @color-stop));
+	background:-moz-linear-gradient(top, @color-start 5%, @color-stop 100%);
+	background:-webkit-linear-gradient(top, @color-start 5%, @color-stop 100%);
+	background:-o-linear-gradient(top, @color-start 5%, @color-stop 100%);
+	background:-ms-linear-gradient(top, @color-start 5%, @color-stop 100%);
+	background:linear-gradient(to bottom, @color-start 5%, @color-stop 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-start', endColorstr='@color-stop',GradientType=0);
+	background-color:@color-start;
+	color:@text;
+	text-shadow:0px 1px 0px @shadow;
+	
+	&:hover {
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, @color-stop), color-stop(1, @color-start));
+		background:-moz-linear-gradient(top, @color-stop 5%, @color-start 100%);
+		background:-webkit-linear-gradient(top, @color-stop 5%, @color-start 100%);
+		background:-o-linear-gradient(top, @color-stop 5%, @color-start 100%);
+		background:-ms-linear-gradient(top, @color-stop 5%, @color-start 100%);
+		background:linear-gradient(to bottom, @color-stop 5%, @color-start 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-stop', endColorstr='@color-start',GradientType=0);
+		background-color:@color-stop;
+	}
+	
+	
+}
+
+
+.btn {
+	
+	.baseButton();
+	
+	&.btn-success {
+		.myButton(#ffffff, #77d42a, #5cb811, #4cae4c, #caefab);
+	}
+	
+	&.btn-primary {
+		.myButton(#ffffff, #007dc1, #0061a7, #154682, #54a3f7);
+	}
+	
+	&.btn-default {
+		.myButton(#666666, #ffffff, #f6f6f6, #ffffff, #ffffff);
+	}
+	
+	&.btn-danger {
+		.myButton(#ffffff, #d0451b, #bc3315, #854629, #cf866c);
+	}
+	
+}
