@@ -32,8 +32,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // API Routes...
 Route::get('api/{resource}/{id}', 'APIController@getResource');
-Route::post('api/{resource}/{id}', 'APIController@updateResource');
-Route::put('api/{resource}', 'APIController@insertResource');
+Route::put('api/{resource}/{id}', 'APIController@updateResource');
+Route::post('api/{resource}', 'APIController@insertResource');
 Route::delete('api/{resource}/{id}', 'APIController@deleteResource');
 
 // Contact Routes...
@@ -44,3 +44,14 @@ Route::get('contacts/edit', function() {
 Route::get('contacts/edit/{id}', 'ContactsController@edit');
 Route::get('contacts/create', 'ContactsController@create');
 Route::get('contacts/{id}', 'ContactsController@show');
+Route::post('contacts/store', 'ContactsController@store');
+
+// Lead Routes...
+Route::get('leads', 'LeadsController@index');
+Route::get('leads/edit', function() {
+	return redirect('leads');
+});
+Route::get('leads/edit/{id}', 'LeadsController@edit');
+Route::get('leads/create', 'LeadsController@create');
+Route::get('leads/{id}', 'LeadsController@show');
+Route::post('leads/store', 'LeadsController@store');

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Contact;
+use App\Lead;
 
-class ContactsController extends Controller
+class LeadsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +18,13 @@ class ContactsController extends Controller
      */
      
     private $user;
-    private $hash;
+    private $hash; 
      
     public function index()
     {
-      $contacts = Contact::orderBy('id', 'asc')->get();
+      $leads = Lead::orderBy('id', 'asc')->get();
 	   
-		return view('contacts', ['contacts'=>$contacts, 'loggedUser' => $this->user, 'hash'=>$this->hash, 'title'=>'Dashboard - Contacts']);
+		return view('leads', ['leads'=>$leads, 'loggedUser' => $this->user, 'hash'=>$this->hash, 'title'=>'Dashboard - Leads']);
     }
 
     /**
@@ -34,7 +34,7 @@ class ContactsController extends Controller
      */
     public function create()
     {
-        return view('create_contact', ['loggedUser' => $this->user, 'hash'=>$this->hash, 'title'=>'Dashboard - Add New Contact']);
+        return view('create_lead', ['loggedUser' => $this->user, 'hash'=>$this->hash, 'title'=>'Dashboard - Add New Lead']);
     }
 
     /**
@@ -45,16 +45,14 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $this->validate($request, [
 		        'name' => 'required|max:255',
 		    ]);
-        $contact = new Contact;
-        $contact->name = $request->name;
-        $contact->save();
-        $id = $contact->id;
-        return redirect('/contacts/' . $id);
-        
+        $lead = new Lead;
+        $lead->name = $request->name;
+        $lead->save();
+        $id = $lead->id;
+        return redirect('/leads/' . $id);
     }
 
     /**
@@ -113,4 +111,5 @@ class ContactsController extends Controller
 		   $this->hash = md5($user->email);
 	   }
    }
+    
 }

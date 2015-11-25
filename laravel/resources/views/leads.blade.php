@@ -8,17 +8,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Contacts <small>All Contacts</small>
+                            Leads <small>All Leads</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <a href="/"><i class="fa fa-dashboard"></i> Dashboard</a>
                             </li>
                             <li class="active">
-                            		<i class="fa fa-users"></i> Contacts
+                            		<i class="fa fa-database"></i> Leads
                             </li>
                             <li>
-                            		<a href="/contacts/create"><i class="fa fa-user-plus"></i> Create</a>
+                            		<a href="/leads/create"><i class="fa fa-plus"></i> Create</a>
                             </li>
                         </ol>
                     </div>
@@ -32,8 +32,8 @@
 			                	<th>Created</th>
 			                </thead>
 			                <tbody>
-			                @foreach ($contacts as $contact)
-			                	<tr><td class="table-text">{{ $contact->name }}</td><td>{{ $contact->created_at }}</td></tr>
+			                @foreach ($leads as $lead)
+			                	<tr><td class="table-text">{{ $lead->name }}</td><td>{{ $lead->created_at }}</td></tr>
 			                @endforeach
 			                </tbody>
 		                </table>
